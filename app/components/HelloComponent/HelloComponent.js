@@ -2,10 +2,13 @@ import React, {Component} from 'react';
 import {StyleSheet, AppRegistry,Text,View} from 'react-native';
 
 export default class HelloComponent extends Component{
+    static defaultProps={
+      fish:'Bass'  
+    }
     render(){
         return (
         <View>
-            <Text style={styles.intro}>Hello {this.props.fish}!</Text>
+            <Text style={styles.intro}>Good Day, {this.props.fish}!</Text>
             <Text style={styles.intro}> MegaMan 3 is the BEST MegaMan Game EVER on the NES!</Text>
         </View>
         )
