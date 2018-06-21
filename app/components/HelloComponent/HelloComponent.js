@@ -5,7 +5,7 @@ export default class HelloComponent extends Component{
     render(){
         return (
         <View>
-            <Text style={styles.intro}>Hello World!</Text>
+            <Text style={styles.intro}>Hello {this.props.fish}!</Text>
             <Text style={styles.intro}> MegaMan 3 is the BEST MegaMan Game EVER on the NES!</Text>
         </View>
         )
