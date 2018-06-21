@@ -1,15 +1,17 @@
 import React, {Component} from 'react';
-import {StyleSheet, AppRegistry,Text,View} from 'react-native';
+import {StyleSheet, AppRegistry,Text,View, Button} from 'react-native';
 
 export default class HelloComponent extends Component{
     constructor(){
         super();
         this.state={
-            showFish: true
+            showFish: false
             
         }
     }
-    
+    displayFish(){
+        this.setState({showFish:true});
+    }
     
     static defaultProps={
       fish:'Bass'  
@@ -17,14 +19,15 @@ export default class HelloComponent extends Component{
     render(){
         let msg='';
         if(this.state.showFish){
-           msg= 'Good Day, '+this.props.fish;+'!';
+           msg= 'Good Day, '+this.props.fish+'!';
            }else{
                msg= 'Good Day, Caleb!'
            }
         return (
         <View>
             <Text style={styles.intro}>{msg}</Text>
-            <Text style={styles.intro}> MegaMan 3 is the BEST MegaMan Game EVER on the NES!</Text>
+            <Button title="Incoming Message" onPress={this.displayFish.bind(this)}/>
+            <Text style={styles.intro} > MegaMan 3 is the BEST MegaMan Game EVER on the NES!</Text>
         </View>
         )
     }
@@ -43,6 +46,9 @@ const styles = StyleSheet.create({
     fontSize: 20,
     textAlign: 'center',
     color: '#cc00cc'
+    },
+    bTon1:{
+        color:'rgb(203,65,84)',
     
     },
 });
